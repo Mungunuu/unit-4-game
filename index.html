@@ -1,87 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>CrystalsCollector Game</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>CrystalsCollector Game</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/game.js"></script>
+  </head>
+  <body>
+    <h1>Crystals Collector!</h1>
+    <div class="instruction">
+      <div id="rcorners">
+        <p>You will be given a random number at the start of the game. </p>
+        <p>There are four crystals below. By clicking on a crystal you will add
+          a specific amount of points on your total score.</p>
+        <p>You win the game by matching your total score to random number, you
+          lose the game if your total score above the random number.</p>
+        <p>The value of each crystal is hidden from you until you click on it.</p>
+        <p>Each time when the game starts, the game will change the values of
+          each crystal.</p>
+      </div>
+    </div>
+    <div id="comTotal">Random</div>
+    <div id="userTotal">Your Total: 0</div>
+    <div id="buttons">
+      <button id="crystal1" class="btn"></button>
+      <button id="crystal2" class="btn"></button>
+      <button id="crystal3" class="btn"></button>
+      <button id="crystal4" class="btn"></button>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<body>
- <!-- <h1>Crystals Collector!</h1>
- <div class= "instruction">
-     <p>You will be given a random number at the start of the game. </p>
-     <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points on your total score.</p>
-     <p>You win the game by matching your total score to random number, you lose the game if your total score above the random number.</p>
-     <p>The value of each crystal is hidden from you until you click on it.</p>
-     <p>Each time when the game starts, the game will change the values of each crystal.</p>
- </div> -->
-  <div id="empty-div"></div>
-    <div id = "comTotal"></div>
-    <div id = "userTotal"></div>
-    <button id = "crystal1" class="btn"></button>
-    <button id = "crystal2" class="btn"></button>
-    <button id = "crystal3" class="btn"></button>
-    <button id = "crystal4" class="btn"></button>
-    <h2 id= "wins">wins:</h2>
-    <h2 id="loses">loses:</h2>
-  <script type="text/javascript">
+      <h2 id="wins">wins:</h2>
+      <h2 id="losses">losses:</h2>
+    </div>
 
-    $(document).ready(function(){
-         
-        var wins = 0;
-        var loses = 0;
-        var comTotalValue = Math.floor((Math.random()*(120-19) + 19));
-        var userTotal = 0 ;
-    
-        var crystal1Value = Math.floor((Math.random() * 12) + 1);
-        var crystal2Value = Math.floor((Math.random() * 12) + 1);
-        var crystal3Value = Math.floor((Math.random() * 12) + 1);
-        var crystal4Value = Math.floor((Math.random() * 12) + 1);
-        
-        $("#comTotal").html(comTotalValue);
-        $("#wins").html(wins);
-        $("#loses").html(loses);
 
-        function clear () {
-            comTotalValue = Math.floor((Math.random()*(120-19) + 19));
-            userTotal = 0 ;
-            $("#comTotal").html(comTotalValue);
-            $("#userTotal").html(userTotal);
-            crystal1Value = Math.floor((Math.random() * 12) + 1);
-            crystal2Value = Math.floor((Math.random() * 12) + 1);
-            crystal3Value = Math.floor((Math.random() * 12) + 1);
-            crystal4Value = Math.floor((Math.random() * 12) + 1);
-            $("#wins").html(wins)
-            $("#loses").html(loses)
-        }
-
-        $(".btn").on("click", function() {
-            
-            console.log(this.id);
-
-            if(this.id == "crystal1") {
-                userTotal += crystal1Value;
-            } else if(this.id == "crystal2") {
-                userTotal += crystal2Value;
-            } else if(this.id == "crystal3") {
-                userTotal += crystal3Value;
-            } else if(this.id == "crystal4") {
-                userTotal += crystal4Value;
-            }
-
-            $("#userTotal").html(userTotal);
-
-            if (comTotalValue == userTotal) {
-                wins++;
-                clear();
-            } else if(comTotalValue < userTotal) {
-                loses++;
-                clear();
-            }
-        })
-    })
-
-  </script>
-
-</body>
+  </body>
 </html>

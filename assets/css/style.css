@@ -1,0 +1,75 @@
+body {
+    height: 100%;
+    background-image: url(http://www.kinyu-z.net/data/wallpapers/5/717466.jpg);
+}
+
+h1 {
+    text-align: center;
+    size: 32px;
+    color: blue;
+}
+
+.instruction {
+    text-align: center;
+}
+
+#rcorners {
+    border: 2px solid blue;
+    border-radius: 25px;
+}
+#comTotal { 
+    padding-top: 50px;
+    font-size: 35px;
+    width: 33%;
+    float: left;
+    /* border:1px solid red; */
+    text-align: center;
+    color: white;
+} 
+#userTotal {
+    padding-top: 50px;
+    font-size: 35px;
+    width: 33%;
+    float:right;
+    /* border:1px solid red; */
+    text-align: center;
+    color: white;
+}
+#buttons {
+    padding-top: 30px;
+    width: 33%;
+    float: left;
+    /* border:1px solid red; */
+    text-align: center;
+}
+#crystal1 {
+    background-image: url(../images/purple.jpg);
+    background-size: cover;
+    /* border:1px solid red; */
+    width: 100px;
+    height: 100px;
+} 
+#crystal2 {
+    background-image: url(../images/red.jpg);
+    background-size: cover;
+    /* border:1px solid red; */
+    width: 100px;
+    height: 100px;
+}
+#crystal3 {
+    background-image: url(../images/yellow.jpg);
+    background-size: cover;
+    /* border:1px solid red; */
+    width: 100px;
+    height: 100px;
+}
+#crystal4 {
+    background-image: url(../images/blue.jpg);
+    background-size: cover;
+    /* border:1px solid red; */
+    width: 100px;
+    height: 100px;
+}
+#wins, #losses {
+    color: white;
+}
